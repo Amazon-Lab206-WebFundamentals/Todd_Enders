@@ -1,0 +1,40 @@
+#wrapper {
+    background-color: gray;
+    width: 1000px;
+    height: auto;
+    margin: 0px auto;
+    padding: 20px;
+}
+div {
+    height: 200px;
+}
+.red {
+    
+    vertical-align: top;
+    background-color: red;
+    width: 450px;
+    margin: 20px;
+}
+.blue {
+    background-color: blue;
+}
+.yellow {
+    display: inline-block;
+    vertical-align: top;
+    background-color: yellow;
+    width: 290px;
+    margin: 20px;
+}
+.green {
+    background-color: green;
+    padding: 20px;
+}
+.purple {
+    display: inline-block;
+    vertical-align: top;
+    background-color: purple;
+    width: 200px;
+}
+.green .purple:last-child {
+    margin-left: 556px;
+}

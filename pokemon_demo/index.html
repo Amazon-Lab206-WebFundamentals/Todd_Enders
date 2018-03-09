@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            var base_url = "https://swapi.co/api/people/";
+
+            for (var i = 1; i <= 10; i++){
+                $.get(base_url+i, function(person){
+                    console.log(person);
+                    var id = person.url.split('/')[5];
+                    console.log(id);
+                    var html_str = `
+                        <div id="${id}" class="business_card">
+                            <h3>${person.name}</h3>
+                        </div> 
+                    `;
+
+                    $('#starpeople').append(html_str);
+                }, 'json');
+            }
+
+            $('#starpeople').on('click', '.business_card', function(){
+                var id = $(this).attr('id');
+                $.get(base_url+id, function(person){
+                    var html_str = `
+                        <h1>Name: ${person.name}</h1>
+                        <p>Birth Year: ${person.birth_year}</p>
+                        <p>Height: ${person.height}</p>
+                    `
+                    $('#starinfo').html(html_str);
+                })
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div id="starpeople">
+        
+    </div>
+    <div id="starinfo">
+
+        
+    </div>
+</body>
+</html>

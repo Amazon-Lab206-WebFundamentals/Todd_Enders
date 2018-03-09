@@ -1,0 +1,15 @@
+div {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+}
+#starinfo {
+    border: 5px solid red;
+}
+.business_card{
+    display: inline-block;
+    vertical-align: top;
+    border: 3px solid black;
+    height: 120px;
+    width: 180px;
+}
